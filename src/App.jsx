@@ -4,7 +4,7 @@ import Register from "./components/Register";
 import TaskList from "./components/TaskList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+  
 function App() {
   return (
     <BrowserRouter>

@@ -5,10 +5,13 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./TaskList.css";
 
+import ChatBotWidget from "./ChatBotWidget";
+
 export default function TaskList() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [newDescription, setNewDescription] = useState("");
+  const [response, setResponse] = useState("");
   const navigate = useNavigate();
 
   const fetchTasks = async () => {
@@ -67,6 +70,8 @@ export default function TaskList() {
     fetchTasks();
   }, []);
 
+ 
+
   return (
     
     <div className="task-list-container">
@@ -76,7 +81,7 @@ export default function TaskList() {
           Logout
         </button>
       </div>
-      <h2>Task List</h2>
+      <br></br>
       {/* FORM onSubmit now hooked */}
       <form className="task-form" onSubmit={addTask}>
         <input
@@ -106,7 +111,10 @@ export default function TaskList() {
         ))}
       </div>
 
+
+
       <ToastContainer />
+        <ChatBotWidget />
     </div>
   );
 }
