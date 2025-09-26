@@ -25,7 +25,7 @@ export default function ChatBot({ onClose }) {
 
     try {
       const res = await axios.get(
-        `http://localhost:8080/chat/${encodeURIComponent(message)}`
+        `http://54.211.223.178:8080/chat/${encodeURIComponent(message)}`
       );
 
       setChatHistory((prev) => [...prev, { bot: res.data }]);
